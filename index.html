@@ -34,7 +34,7 @@
 	<div class="content"><br>
 		<div class="title">
 			<p class="banner" align="center"></p>
-			<h1>MaskCLR: Multi-level Contrastive Learning For Robust Skeletal Action Recognition </h1>
+			<h1>MaskCLR: Attention-Guided Contrastive Learning for Robust Action Representation Learning </h1>
 		</div>
 
 		<!-- <div class="authors" >
@@ -65,7 +65,7 @@
 		  <h2>Abstract</h2>
 		  <div class="description">
 			<p style="text-align: left;">
-				Current transformer-based skeletal action recognition models focus on a limited set of joints and low-level motion patterns to predict action classes. This results in significant performance degradation under small skeleton perturbations or changing the pose estimator between training and testing. In this work, we introduce MaskCLR, a new Masked Contrastive Learning approach for Robust skeletal action recognition. We propose a Targeted Masking (TM) strategy to occlude the most important joints and encourage the model to explore a larger set of discriminative joints. Furthermore, we propose a Multi-Level Contrastive Learning (MLCL) paradigm to enforce feature embeddings of standard and occluded skeletons to be class-discriminative, i.e, more compact within each class and more dispersed across different classes. Our approach helps the model capture the high-level action semantics instead of low-level joint variations, and can be seamlessly incorporated into transformer-based models. Without loss of generality, we apply our method on Spatial-Temporal Multi-Head Self-Attention encoder (ST-MHSA), and we perform extensive experiments on NTU60, NTU120, and Kinetics400 benchmarks. MaskCLR consistently outperforms previous state-of-the-art methods on standard and perturbed skeletons from different pose estimators, showing improved accuracy, generalization, and robustness to skeleton perturbations. 
+				Current transformer-based skeletal action recognition models tend to focus on a limited set of joints and low-level motion patterns to predict action classes. This results in significant performance degradation under small skeleton perturbations or changing the pose estimator between training and testing. In this work, we introduce MaskCLR, a new Masked Contrastive Learning approach for Robust skeletal action recognition. We propose an Attention-Guided Probabilistic Masking (AGPM) strategy to occlude the most important joints and encourage the model to explore a larger set of discriminative joints. Furthermore, we propose a Multi-Level Contrastive Learning (MLCL) paradigm to enforce the representations of standard and occluded skeletons to be class-discriminative, i.e, more compact within each class and more dispersed across different classes. Our approach helps the model capture the high-level action semantics instead of low-level joint variations, and can be conveniently incorporated into transformer-based models. Without loss of generality, we combine MaskCLR with three transformer backbones: the vanilla transformer, DSTFormer, and STTFormer. Extensive experiments on NTU60, NTU120, and Kinetics400 show that MaskCLR consistently outperforms previous state-of-the-art methods on standard and perturbed skeletons from different pose estimators, showing improved accuracy, generalization, and robustness to skeleton perturbations.
 			</p>
 		  </div>
 		</div>
@@ -73,8 +73,8 @@
 	
 		<div class="Framework sec">
 			<h2>Framework</h2>
-			<img src="./files/overview.png" alt="Framework" width="100%">
-			<p style="text-align: left;"> <strong>The pipeline of MaskCLR</strong>. Our approach consists of two (<strong>base</strong> and <strong>masked</strong>) pathways that share the same weights. The base pathway takes standard input skeletons while the masked pathway receives only the unactivated joints from the base pathway. Both pathways consist of cascaded spatial and temporal MHSA blocks to extract the spatial and temporal information respectively. Initially, the base pathway is trained alone using cross-entropy loss. The masked pathway, subsequently, comes into play to encourage the model to explore more discriminative joints. Using sample contrastive loss, we maximize the agreement of feature representations from the two pathways for the same skeleton sequence and vice versa. Additionally, to exploit the high semantic consistency between same-class skeleton sequences, we maximize the similarity between the class-wise average representations from the two pathways using class contrastive loss. Ultimately, the two contrastive losses contribute to the formation of a disentangled feature space, effectively improving the accuracy, robustness, and generalization of the model.</p>
+			<img src="./files/overview_new.png" alt="Framework" width="100%">
+			<p style="text-align: left;"> <strong>The pipeline of MaskCLR</strong>. Our approach consists of two (<strong>standard</strong> and <strong>masked</strong>) pathways that share the same weights. The standard pathway takes standard input skeletons while the masked pathway receives mostly the less activated joints from the standard pathway. Initially, the standard pathway is trained alone using the cross-entropy loss. The masked pathway, subsequently, comes into play to encourage the model to explore more discriminative joints. Using sample contrastive loss, we maximize the agreement of feature representations from the two pathways for the same skeleton sequence and vice versa. Additionally, to exploit the high semantic consistency between same-class skeleton sequences, we maximize the similarity between the class-wise average representations from the two pathways using class contrastive loss. Ultimately, the two contrastive losses contribute to the formation of a disentangled feature space, effectively improving the accuracy, robustness, and generalization of the model. At test time, only the standard pathway is used.</p>
 			</div>
 
 		<div class="experiments_sec">
@@ -92,8 +92,8 @@
 	  	<div class="download_sec">
 			<h2>Resources</h2>
 			<div>
-				<li><strong>Paper</strong>:  <a href="https://openreview.net/pdf?id=g0KxyULAun">OpenReview</a></li>
-				<li><strong>Supplementary material</strong>:  <a href="https://openreview.net/pdf?id=g0KxyULAun">OpenReview</a></li>
+				<li><strong>Paper</strong>:  <a href="https://openreview.net/pdf?id=PVpfUEF3ze">OpenReview</a></li>
+				<li><strong>Supplementary material</strong>: coming soon</li>
 				<li><strong>Code</strong>:  coming soon</li>
 
 			</div>
