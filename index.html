@@ -4,7 +4,7 @@
 <meta name="language" content="english">
 <title>MaskCLR</title>
 <meta name="description" content="MaskCLR">
-<meta name="author" content="Mohamed Abdelfattah">
+<meta name="author" content="MaskCLR">
 <link rel="icon" type="image/x-icon" href="http://www.icst.pku.edu.cn/favicon.ico">
 <link rel="stylesheet" type="text/css" href="files/project.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -57,7 +57,7 @@
 		<br><hr>
 		<div class="teaser sec" style="text-align:center;">
 			<img src="./files/act_vis2.png" alt="Teaser" width="100%">
-			<p style="text-align: left;"><strong>Visualization of joint activations of MotionBERT and MaskCLR</strong>. The activated joints are more reddish while the unactivated ones are more blueish. MaskCLR uses a bigger set of discriminative joints to recognize actions.</p>
+			<p style="text-align: left;"><strong>Visualization of joint activations of MotionBERT and MaskCLR</strong>. The activated joints are more <span style="color:red">reddish</span> while the unactivated ones are more <span style="color:blue">blueish</span>. MaskCLR uses a bigger set of discriminative joints to recognize actions.</p>
 		</div>
 		
 
@@ -70,6 +70,12 @@
 		  </div>
 		</div>
 		
+		<div class="content has-text-justified">
+			<p>
+			  Examples of model predictions under noisy skeletons. MaskCLR is more robust to noise, compared to MotionBERT using the same DSTFormer backbone.
+			</p>
+			<img src="./files/robust_recog_003.gif" style="display:block; margin: 0 auto;" alt="Gif for Robust Recognition" height="100%">
+		</div>
 	
 		<div class="Framework sec">
 			<h2>Framework</h2>
@@ -94,7 +100,7 @@
 			<div>
 				<li><strong>Paper</strong>:  <a href="https://openreview.net/pdf?id=PVpfUEF3ze">OpenReview</a></li>
 				<li><strong>Supplementary material</strong>: coming soon</li>
-				<li><strong>Code</strong>:  coming soon</li>
+				<li><strong>Code</strong>:  <a href="https://anonymous.4open.science/r/MaskCLR-A503">Anonymous GitHub</a></li>
 
 			</div>
 		</div>
