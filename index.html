@@ -34,15 +34,16 @@
 	<div class="content"><br>
 		<div class="title">
 			<p class="banner" align="center"></p>
-			<h1>MaskCLR: Attention-Guided Contrastive Learning for Robust Action Representation Learning </h1>
+			<h1>MaskCLR: Attention-Guided Contrastive Learning for Robust Skeletal Action Representation Learning </h1>
 		</div>
-		 <div class="description">
+		 <div class="description" style="font-size: 20px;">
 			<p style="text-align: center;">
 				Mohamed Abdelfattah&nbsp;&nbsp;Mariam Hassan&nbsp;&nbsp;Alexandre Alahi
 				
 				<br>
 				
 				École Polytechnique Fédérale de Lausanne (EPFL)
+				<br>
 				firstname.lastname@epfl.ch
 			</p>
 		  </div>
@@ -58,7 +59,16 @@
 		  <h2>Abstract</h2>
 		  <div class="description">
 			<p style="text-align: left;">
-				Current transformer-based skeletal action recognition models tend to focus on a limited set of joints and low-level motion patterns to predict action classes. This results in significant performance degradation under small skeleton perturbations or changing the pose estimator between training and testing. In this work, we introduce MaskCLR, a new Masked Contrastive Learning approach for Robust skeletal action recognition. We propose an Attention-Guided Probabilistic Masking (AGPM) strategy to occlude the most important joints and encourage the model to explore a larger set of discriminative joints. Furthermore, we propose a Multi-Level Contrastive Learning (MLCL) paradigm to enforce the representations of standard and occluded skeletons to be class-discriminative, i.e, more compact within each class and more dispersed across different classes. Our approach helps the model capture the high-level action semantics instead of low-level joint variations, and can be conveniently incorporated into transformer-based models. Without loss of generality, we combine MaskCLR with three transformer backbones: the vanilla transformer, DSTFormer, and STTFormer. Extensive experiments on NTU60, NTU120, and Kinetics400 show that MaskCLR consistently outperforms previous state-of-the-art methods on standard and perturbed skeletons from different pose estimators, showing improved accuracy, generalization, and robustness to skeleton perturbations.
+				Current transformer-based skeletal action recognition models tend to focus on a limited set of joints and low-level motion patterns to predict action classes. 
+				This results in significant performance degradation under small skeleton perturbations or changing the pose estimator between training and testing. 
+				In this work, we introduce MaskCLR, a new Masked Contrastive Learning approach for Robust skeletal action recognition. 
+				We propose an Attention-Guided Probabilistic Masking (AGPM) strategy to occlude the most important joints and encourage the model to explore a larger set of discriminative joints. 
+				Furthermore, we propose a Multi-Level Contrastive Learning (MLCL) paradigm to enforce the representations of standard and occluded skeletons to be class-discriminative, 
+				i.e, more compact within each class and more dispersed across different classes. 
+				Our approach helps the model capture the high-level action semantics instead of low-level joint variations, and can be conveniently incorporated into transformer-based models. 
+				Without loss of generality, we combine MaskCLR with three transformer backbones: the vanilla transformer, DSTFormer, and STTFormer. 
+				Extensive experiments on NTU60, NTU120, and Kinetics400 show that MaskCLR consistently outperforms previous state-of-the-art methods on standard and perturbed skeletons
+				 from different pose estimators, showing improved accuracy, generalization, and robustness to skeleton perturbations.
 			</p>
 		  </div>
 		</div>
